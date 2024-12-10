@@ -1,69 +1,260 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Madrid - The Legacy of Ronaldo</title>
   <style>
-     body{
-         text-align: center;
-         background-image: linear-gradient(rgb(216, 205, 87), rgb(222, 222, 222));
-         min-width: 100%;
-         min-height: 100%;
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f1f1f1;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Helvetica', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Sticky Navigation Bar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background-color: #333;
+      padding: 15px 0;
+      z-index: 1000;
+    }
+
+    .navbar ul {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+    }
+
+    .navbar li {
+      position: relative;
+    }
+
+    .navbar a {
+      color: white;
+      font-size: 18px;
+      padding: 10px 15px;
+      text-transform: uppercase;
+      transition: 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #575757;
+      border-radius: 5px;
+      transform: scale(1.1);
+    }
+
+    /* Dropdown Styles */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      padding: 12px 16px;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #575757;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEH3_vQXYFZJpI8mHkEmLAjDzR75ueLtB_TQ&s');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+      margin-bottom: 30px;
+    }
+
+    .bn30 {
+      background: linear-gradient(45deg, #4568dc, #b06ab3);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .bn30:hover {
+      background: linear-gradient(-45deg, #4568dc, #b06ab3);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      transform: translateY(-5px);
+    }
+
+    /* Section Styling */
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .ronaldo-section, .about-section {
+      background-color: #222;
+      color: white;
+    }
+
+    .ronaldo-section h2, .about-section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .ronaldo-section p, .about-section p {
+      font-size: 18px;
+      color: #ccc;
+      line-height: 1.7;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .ronaldo-section img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    .about-section {
+      background-color: white;
+      color: #333;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .navbar ul {
+        flex-direction: column;
+        align-items: center;
       }
+
+      .navbar a {
+        padding: 10px;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
       .bn30 {
-  border: 5em;
-  cursor: pointer;
-  outline: none;
-  font-size: 16px;
-  -webkit-transform: translate(0);
-  transform: translate(0);
-  background-image: linear-gradient(45deg, #4568dc, #b06ab3);
-  padding: 0.7em 2em;
-  border-radius: 65px;
-  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
-  -webkit-transition: box-shadow 0.25s;
-  transition: box-shadow 0.25s;
-  color: white;
-}
+        padding: 12px 25px;
+        font-size: 16px;
+      }
 
-.bn30 .text {
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(45deg, #4568dc, #b06ab3);
-}
-
-.bn30:after {
-  content: "";
-  border-radius: 18px;
-  position: absolute;
-  margin: 4px;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  background: #0e0e10;
-}
-
-.bn30:hover {
-  background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
-  box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
-}
-
-.bn30:hover .text {
-  background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
-}
+      .ronaldo-section, .about-section {
+        padding: 40px 15px;
+      }
+    }
   </style>
 </head>
-
 <body>
-<h1> Real Madrid</h1>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEH3_vQXYFZJpI8mHkEmLAjDzR75ueLtB_TQ&s">
 
-<h2>
-Founded in 1902 as Madrid Football Club, the club has traditionally worn a white home kit since its inception. The honorific title real is Spanish for "royal" and was bestowed to the club by King Alfonso XIII in 1920 alongside with the crown in the club crest. Real Madrid have played their home matches in the 85,000-capacity Santiago Bernabéu in Madrid since 1947. Unlike most European sporting clubs, Real Madrid's members (socios) have owned and operated the club throughout its history. The official Madrid anthem is the "Hala Madrid y nada más", written by RedOne and Manuel Jabois.[8] The club is one of the most widely supported in the world and is the most followed football club on social media according to the CIES Football Observatory as of 2023.[9][10] It was estimated to be worth $6.6 billion in 2024, making it the world's most valuable football club.[11] In 2024, Real Madrid become the first football club to make €1 billion ($1.08bn) in revenue according to the club's announcement.[12]
-</h2>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#ronaldo">Ronaldo's Legacy</a></li>
+      <li><a href="https://www.realmadrid.com/en-US">Official Site</a></li>
 
-<a href="https://www.realmadrid.com/en-US"><button class="bn30">Real Madrid</button></a>
+      <!-- Dropdown Menu -->
+      <li class="dropdown">
+        <a href="#">Club Info</a>
+        <div class="dropdown-content">
+          <a href="#history">History</a>
+          <a href="#stadium">Stadium</a>
+          <a href="#shop">Shop</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div>
+      <h1>Real Madrid</h1>
+      <p>The Home of Legends</p>
+      <a href="#ronaldo"><button class="bn30">Discover Ronaldo's Legacy</button></a>
+    </div>
+  </div>
+
+  <!-- Ronaldo's Legacy Section -->
+  <div class="ronaldo-section section" id="ronaldo">
+    <h2>Cristiano Ronaldo at Real Madrid</h2>
+    <p>Cristiano Ronaldo's tenure at Real Madrid (2009-2018) was marked by unforgettable moments, incredible statistics, and numerous titles. Ronaldo is the club’s all-time top scorer, with a record 450 goals in 438 appearances. He won four Champions League titles with the club and helped Real Madrid secure countless La Liga and international trophies.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Cristiano_Ronaldo_2018.jpg" alt="Cristiano Ronaldo at Real Madrid">
+  </div>
+
+  <!-- About Section -->
+  <div class="about-section section" id="about">
+    <h2>About Real Madrid</h2>
+    <p>Founded in 1902, Real Madrid is one of the most successful and beloved football clubs in the world. The club has a rich history, winning countless domestic and international titles. With a legacy built on world-class players and unwavering dedication, Real Madrid continues to inspire fans globally.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Real Madrid Fan Page | All Rights Reserved</p>
+  </footer>
 
 </body>
-
 </html>
